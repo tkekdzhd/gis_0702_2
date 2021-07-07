@@ -4,20 +4,20 @@
 
     <style>
         .test{
-            background-color: green;
+            background-color: yellow;
             margin: 1rem;
             width: 48px;
             height: 48px;
             border-radius: .5rem;
+            display: inline-block;
         }
     </style>
-
-    <div style="height: 20rem; background-color: aqua; margin: 2rem; border-radius: 1rem">
+    {#  em은 부모의 폰트 크기에 따라 바뀜  #}
+    <div style="height: 20rem; background-color: aqua; margin: 2rem; border-radius: 1rem; font-size: 2rem">
         <h1>TEST</h1>
-        <div class="test" style="display: block">block</div>
-        <div class="test" style="display: inline">inline</div>
-        <div class="test" style="display: none">none</div>
-        <div class="test" style="display: inline-block">inline-block</div>
-        <div class="test"></div>
+        <div class="test" style="width: 48px; height: 48px;"></div>
+        <div class="test" style="width: 3rem; height: 3rem;"></div>
+        <div class="test" style="width: 3em; height: 3em;"></div>
+        <div class="test" style="width: 30%; height: 30%;"></div>
     </div>
 {% endblock %}
