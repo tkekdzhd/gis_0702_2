@@ -1,23 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <style>
-        .test{
-            background-color: yellow;
-            margin: 1rem;
-            width: 48px;
-            height: 48px;
-            border-radius: .5rem;
-            display: inline-block;
-        }
-    </style>
     {#  em은 부모의 폰트 크기에 따라 바뀜  #}
-    <div style="height: 20rem; background-color: aqua; margin: 2rem; border-radius: 1rem; font-size: 2rem">
-        <h1>TEST</h1>
-        <div class="test" style="width: 48px; height: 48px;"></div>
-        <div class="test" style="width: 3rem; height: 3rem;"></div>
-        <div class="test" style="width: 3em; height: 3em;"></div>
-        <div class="test" style="width: 30%; height: 30%;"></div>
+    <div style="margin: 2rem; text-align: center">
+        <h1>HTTP METHOD</h1>
+        <form action="/accounts/hello_world/" method="POST">
+            {% csrf_token %}
+            <input class="btn btn-outline-dark rounded-pill px-5" type="submit">
+
+        </form>
+
+        {#단순변수출력#}
+        <h3>{{ text }}</h3>
     </div>
 {% endblock %}
