@@ -6,11 +6,12 @@
         <h1>HTTP METHOD</h1>
         <form action="/accounts/hello_world/" method="POST">
             {% csrf_token %}
-            <input class="btn btn-outline-dark rounded-pill px-5" type="submit">
 
+            <input type="text" name="input_text">
+            <input class="btn btn-outline-dark rounded-pill px-5" type="submit" value="SEND">
         </form>
 
         {#단순변수출력#}
-        <h3>{{ text }}</h3>
+        <h3>{{ new_model.text }}</h3>
     </div>
 {% endblock %}
