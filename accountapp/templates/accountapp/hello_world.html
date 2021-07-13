@@ -11,7 +11,9 @@
             <input class="btn btn-outline-dark rounded-pill px-5" type="submit" value="SEND">
         </form>
 
+        {% for data in data_list %}
         {#단순변수출력#}
-        <h3>{{ new_model.text }}</h3>
+        <h3>{{ data.text }}</h3>
+        {% endfor %}
     </div>
 {% endblock %}
