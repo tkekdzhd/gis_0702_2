@@ -5,5 +5,5 @@ app_name = 'accountapp'
 urlpatterns = [
     path('hello_world/', hello_world, name='hello_world'),
     # 클래스에는 .as_view 필요
-    path('create/', AccountCreateView.as_view, name='create'),
+    path('create/', AccountCreateView.as_view(), name='create'),
 ]
