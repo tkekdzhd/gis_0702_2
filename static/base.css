@@ -13,3 +13,8 @@
 .happen_footer_logo{
     margin: 1.5rem 0;font-family: 'Lobster', cursive;
 }
+
+.mw-500 {
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+}
