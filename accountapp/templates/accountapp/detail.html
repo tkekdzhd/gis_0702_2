@@ -14,5 +14,10 @@
                 Update Info
             </a>
         </div>
+        <div>
+            <a href="{% url 'accountapp:delete' pk=target_user.pk %}">
+                Quit
+            </a>
+        </div>
     </div>
 {% endblock %}
