@@ -3,7 +3,9 @@
         <h1>Happen</h1>
     </div>
     <div class="happen_header_btn">
-        <span>nav1</span>
+        <span>
+            <a href="{% url 'articleapp:list' %}">Articles</a>
+        </span>
         <span>nav2</span>
         {# user 객체는 장고 템플릿 어디서든 접근가능하다, 로그인되어있는지 아닌지 판별가능 #}
         {% if not user.is_authenticated %}
