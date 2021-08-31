@@ -14,29 +14,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 from articleapp.models import Article
 
-
-@login_required  #(login_url=reverse_lazy('accountapp:login')) 안되면 추가해주기
-def hello_world(request):
-    if request.method == 'POST':
-        temp = request.POST.get('input_text')
-
-        new_model = NewModel()
-        new_model.text = temp
-        new_model.save()
-
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
-
-    else:
-        data_list = NewModel.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
-
-
-
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
     # reverse_lazy 를 쓰는 이유: 함수에서는 reverse를 바로 불러오면 되지만 클래스에서는 추후에 부를 때 값을 되돌려 달라는 의미의 reverse_lazy를 사용한다.
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/create.html'
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
@@ -67,5 +49,5 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/delete.html'

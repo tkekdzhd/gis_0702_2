@@ -17,8 +17,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
 from django.contrib import admin
+from articleapp.views import ArticleListView
 
 urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'),
+
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
